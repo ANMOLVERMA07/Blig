@@ -12,7 +12,7 @@ import {login,logout} from './store/authSlice'
 
 function App() {
   // ek loading state bnana acha hota hai , kyunki jaise hi application mount hota hai to vo kuch data fetch krega backend se to usme thoda time lag skta hai isley ek loading state run krti rhegi jab tk fetch nhi hota
-  const [loading,setLoading] = useState("false");
+  const [loading,setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -28,8 +28,8 @@ function App() {
                     dispatch(logout());
                    }
                })
-               .finally(() => setLoading("false"));   //  jab sara kaam hojaye to loading ko false krdenge
-  },[])
+               .finally(() => setLoading(false));   //  jab sara kaam hojaye to loading ko false krdenge
+                 },[])
 
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
