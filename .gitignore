@@ -1,1 +1,2 @@
-Blig/.env
+.gitignore
+package-lock.json
